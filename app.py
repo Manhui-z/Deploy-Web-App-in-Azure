@@ -36,8 +36,14 @@ def predict():
             prediction_text = 'Predicted option value is: $ {}'.format(prediction))
     
 # run app
-if __name__ == '__main__':
-    app.run(port = 5000, debug = True)
+# if __name__ == '__main__':
+#     app.run(port = 5001, debug = True)
+
+if __name__ == "__main__":
+    try:
+        web.run_app(app, host="0.0.0.0", port=CONFIG.PORT)
+    except Exception as error:
+        raise error
 
 
     
